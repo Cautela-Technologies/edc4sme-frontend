@@ -13,7 +13,7 @@
 }
 
 .contact-header {
-  background: url("../images/program.png") no-repeat center/cover;
+  background: url("../svg/headerbg.svg") no-repeat center/cover;
   padding: 96px 0;
 }
 .contact-header .text {

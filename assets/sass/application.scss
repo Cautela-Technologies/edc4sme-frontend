@@ -1,0 +1,360 @@
+@use "./utils/index" as *;
+
+.application-page {
+  .header-container {
+    background: rgba(217, 217, 217, 0.21);
+    padding: 20px 0;
+  }
+
+  .cover-header {
+    @include sectionPadding;
+  }
+
+  .bs-stepper-header {
+    width: 100%;
+    & {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      background: #f8f9fa;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0px;
+      right: 0px;
+      height: 2px;
+      background: #e0e0e0;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0px;
+      height: 2px;
+      background: var(--primary);
+      z-index: 2;
+      transition: width 0.5s ease;
+    }
+  }
+
+  .bs-stepper-header.step-1::after {
+    width: 0%;
+  }
+
+  .bs-stepper-header.step-2::after {
+    width: 50%;
+  }
+
+  .bs-stepper-header.step-3::after {
+    width: 100%;
+  }
+
+  .step-trigger {
+    text-decoration: none;
+    color: transparent;
+    font-weight: 500;
+    padding: 0;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bs-stepper-header[data-progress="1"]::after {
+    width: 0%;
+  }
+
+  .bs-stepper-header[data-progress="2"]::after {
+    width: 50%;
+  }
+
+  .bs-stepper-header[data-progress="3"]::after {
+    width: 100%;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+    position: relative;
+    flex: 1;
+
+    &:first-child {
+      button {
+        align-items: flex-start;
+        .step-label {
+          text-align: left;
+        }
+      }
+    }
+    &:nth-child(2) {
+      button {
+        align-items: center;
+      }
+    }
+    &:last-child {
+      align-items: flex-end;
+      button {
+        align-items: flex-end;
+        .step-label {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .step-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: 3px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+  }
+
+  .step.active .step-circle {
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+  }
+
+  .step.completed .step-circle {
+    background: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .step-label {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    @include mq(768px) {
+      max-width: 150px;
+    }
+  }
+
+  .step.active .step-label {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .step.completed .step-label {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  /* Form Content */
+  .form-content {
+    padding: 40px;
+  }
+
+  .form-step {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .form-step.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .bs-stepper-content {
+    @include sectionPadding;
+
+    & {
+      position: relative;
+    }
+
+    form {
+      padding: 24px 40px;
+      max-width: 544px;
+      margin: 42px auto;
+      border-radius: 24px;
+      border: 1px solid #ececec;
+      background: var(--white);
+
+      @include mq(950px) {
+        margin-top: 70px;
+      }
+
+      @include mq(768px) {
+        padding: 24px 16px;
+      }
+
+      .back-btn {
+        @include btn;
+        position: absolute;
+        min-width: unset;
+        left: 80px;
+        top: 56px;
+        border-radius: 100px;
+        border: 1px solid #ececec;
+        background: #f7f7f7;
+        padding: 8px 12px;
+        height: 32px;
+        color: var(--primary);
+        @include mq(950px) {
+          top: 30px;
+          left: 30px;
+        }
+        @include mq(768px) {
+          left: 20px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    @include btn;
+
+    @include mq(600px) {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
+
+  .btn-primary {
+    @include button-primary;
+
+    &.submit {
+      min-width: 200px;
+    }
+
+    &.full {
+      width: 100%;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 10px;
+    flex-wrap: wrap-reverse;
+  }
+
+  .back-btn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .back-btn:hover {
+    color: #374151;
+  }
+
+  .step-header-title {
+    margin-bottom: 2rem;
+    color: var(--black01);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.48px;
+    @include mq(768px) {
+      font-size: 24px;
+    }
+  }
+
+  .step-content {
+    display: none;
+  }
+
+  .step-content.active {
+    display: block;
+  }
+
+  .tagline-input {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .success-message {
+    text-align: center;
+    img {
+      margin: 0 auto 12px;
+    }
+  }
+
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: white;
+    font-size: 24px;
+  }
+  .step-description {
+    color: #636363;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.16px;
+    margin-bottom: 32px;
+    @include mq(768px) {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .btn-container {
+    a {
+      @include btn;
+      width: 100%;
+      &.secondary {
+        @include btn-outlined;
+        border: 2px solid var(--primary);
+        margin-bottom: 8px;
+      }
+      &.primary {
+        @include button-primary;
+      }
+    }
+  }
+}

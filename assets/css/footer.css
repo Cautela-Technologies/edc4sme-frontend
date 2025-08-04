@@ -1,0 +1,187 @@
+.theme {
+  --primary: #2e3a6e;
+  --white: #ffffff;
+  --black: #000000;
+  --black01: #06080e;
+  --grey01: #636363;
+  --grey02: #3f3f3f;
+  --error: #d90429;
+  --red0: #ff002c;
+  --red01: #c20808;
+  --red02: #ae001e;
+  --red03: #713e47;
+}
+
+footer {
+  background-color: var(--black01);
+  padding-top: 64px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column-reverse;
+    padding: 14px 80px;
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 768px) {
+  footer {
+    padding: 10px 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding-top: 60px;
+  }
+}
+footer .left-footer {
+  flex: 1;
+  padding-left: 220px;
+  padding-bottom: 64px;
+}
+@media screen and (max-width: 1000px) {
+  footer .left-footer {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer .left-footer {
+    padding-left: 0;
+  }
+}
+footer .left-footer img {
+  max-width: 217px;
+}
+footer .left-footer .copy {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  footer .left-footer .copy {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 18px */
+    opacity: 0.5;
+  }
+}
+footer .left-footer p {
+  max-width: 410px;
+  margin: 24px 0;
+  color: #d9d9d9;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 24px */
+  letter-spacing: -0.2px;
+}
+footer .left-footer a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 48px;
+  min-width: 130px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: var(--white);
+  color: var(--primary);
+  max-width: 207px;
+}
+footer .left-footer a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+footer .right-footer {
+  flex: 1;
+  padding-right: 220px;
+  padding: 64px 220px 64px 64px;
+  border-radius: 128px 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+}
+@media screen and (max-width: 768px) {
+  footer .right-footer {
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+  }
+}
+footer .right-footer .footer-flex {
+  margin-bottom: 52px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@media screen and (max-width: 768px) {
+  footer .right-footer .footer-flex {
+    margin-bottom: 0;
+  }
+}
+footer .right-footer .footer-flex .footer-item .title {
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+}
+footer .right-footer .footer-flex .footer-item .social-links {
+  display: flex;
+  gap: 5px;
+}
+footer .right-footer .footer-flex .footer-item .social-links .social-item {
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.11);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .right-footer .footer-flex .footer-item .social-links .social-item img {
+  width: 18px;
+}
+footer .right-footer .footer-flex .footer-item .links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+footer .right-footer .footer-flex .footer-item .links a {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  text-decoration: none;
+}
+footer .right-footer .copy {
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 18px */
+  opacity: 0.5;
+}
+@media screen and (max-width: 768px) {
+  footer .right-footer .copy {
+    display: none;
+  }
+}/*# sourceMappingURL=footer.css.map */

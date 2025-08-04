@@ -1,0 +1,457 @@
+.theme {
+  --primary: #2e3a6e;
+  --white: #ffffff;
+  --black: #000000;
+  --black01: #06080e;
+  --grey01: #636363;
+  --grey02: #3f3f3f;
+  --error: #d90429;
+  --red0: #ff002c;
+  --red01: #c20808;
+  --red02: #ae001e;
+  --red03: #713e47;
+}
+
+.application-page {
+  /* Form Content */
+}
+.application-page .header-container {
+  background: rgba(217, 217, 217, 0.21);
+  padding: 20px 0;
+}
+.application-page .cover-header {
+  padding: 14px 80px;
+  max-width: 1440px;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .application-page .cover-header {
+    padding: 10px 16px;
+  }
+}
+.application-page .bs-stepper-header {
+  width: 100%;
+}
+.application-page .bs-stepper-header {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: #f8f9fa;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.application-page .bs-stepper-header::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  right: 0px;
+  height: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+.application-page .bs-stepper-header::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  height: 2px;
+  background: var(--primary);
+  z-index: 2;
+  transition: width 0.5s ease;
+}
+.application-page .bs-stepper-header.step-1::after {
+  width: 0%;
+}
+.application-page .bs-stepper-header.step-2::after {
+  width: 50%;
+}
+.application-page .bs-stepper-header.step-3::after {
+  width: 100%;
+}
+.application-page .step-trigger {
+  text-decoration: none;
+  color: transparent;
+  font-weight: 500;
+  padding: 0;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.application-page .bs-stepper-header[data-progress="1"]::after {
+  width: 0%;
+}
+.application-page .bs-stepper-header[data-progress="2"]::after {
+  width: 50%;
+}
+.application-page .bs-stepper-header[data-progress="3"]::after {
+  width: 100%;
+}
+.application-page .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+  position: relative;
+  flex: 1;
+}
+.application-page .step:first-child button {
+  align-items: flex-start;
+}
+.application-page .step:first-child button .step-label {
+  text-align: left;
+}
+.application-page .step:nth-child(2) button {
+  align-items: center;
+}
+.application-page .step:last-child {
+  align-items: flex-end;
+}
+.application-page .step:last-child button {
+  align-items: flex-end;
+}
+.application-page .step:last-child button .step-label {
+  text-align: right;
+}
+.application-page .step-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  border: 3px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+.application-page .step.active .step-circle {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+}
+.application-page .step.completed .step-circle {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.application-page .step-label {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  .application-page .step-label {
+    max-width: 150px;
+  }
+}
+.application-page .step.active .step-label {
+  color: var(--primary);
+  font-weight: 600;
+}
+.application-page .step.completed .step-label {
+  color: var(--primary);
+  font-weight: 600;
+}
+.application-page .form-content {
+  padding: 40px;
+}
+.application-page .form-step {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.application-page .form-step.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.application-page .bs-stepper-content {
+  padding: 14px 80px;
+  max-width: 1440px;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .application-page .bs-stepper-content {
+    padding: 10px 16px;
+  }
+}
+.application-page .bs-stepper-content {
+  position: relative;
+}
+.application-page .bs-stepper-content form {
+  padding: 24px 40px;
+  max-width: 544px;
+  margin: 42px auto;
+  border-radius: 24px;
+  border: 1px solid #ececec;
+  background: var(--white);
+}
+@media screen and (max-width: 950px) {
+  .application-page .bs-stepper-content form {
+    margin-top: 70px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .application-page .bs-stepper-content form {
+    padding: 24px 16px;
+  }
+}
+.application-page .bs-stepper-content form .back-btn {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 48px;
+  min-width: 130px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  min-width: unset;
+  left: 80px;
+  top: 56px;
+  border-radius: 100px;
+  border: 1px solid #ececec;
+  background: #f7f7f7;
+  padding: 8px 12px;
+  height: 32px;
+  color: var(--primary);
+}
+.application-page .bs-stepper-content form .back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+@media screen and (max-width: 950px) {
+  .application-page .bs-stepper-content form .back-btn {
+    top: 30px;
+    left: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .application-page .bs-stepper-content form .back-btn {
+    left: 20px;
+  }
+}
+.application-page .btn {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 48px;
+  min-width: 130px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.application-page .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+@media screen and (max-width: 600px) {
+  .application-page .btn {
+    width: 100%;
+    min-width: unset;
+  }
+}
+.application-page .btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.application-page .btn-primary {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 48px;
+  min-width: 130px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: var(--primary);
+  color: var(--white);
+}
+.application-page .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+.application-page .btn-primary.submit {
+  min-width: 200px;
+}
+.application-page .btn-primary.full {
+  width: 100%;
+}
+.application-page .btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 10px;
+  flex-wrap: wrap-reverse;
+}
+.application-page .back-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+.application-page .back-btn:hover {
+  color: #374151;
+}
+.application-page .step-header-title {
+  margin-bottom: 2rem;
+  color: var(--black01);
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.48px;
+}
+@media screen and (max-width: 768px) {
+  .application-page .step-header-title {
+    font-size: 24px;
+  }
+}
+.application-page .step-content {
+  display: none;
+}
+.application-page .step-content.active {
+  display: block;
+}
+.application-page .tagline-input {
+  resize: vertical;
+  min-height: 100px;
+}
+.application-page .success-message {
+  text-align: center;
+}
+.application-page .success-message img {
+  margin: 0 auto 12px;
+}
+.application-page .success-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: white;
+  font-size: 24px;
+}
+.application-page .step-description {
+  color: #636363;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.16px;
+  margin-bottom: 32px;
+}
+@media screen and (max-width: 768px) {
+  .application-page .step-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+.application-page .btn-container a {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 48px;
+  min-width: 130px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+.application-page .btn-container a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+.application-page .btn-container a.secondary {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  margin-bottom: 8px;
+}
+.application-page .btn-container a.primary {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: 48px;
+  min-width: 130px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: var(--primary);
+  color: var(--white);
+}
+.application-page .btn-container a.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}/*# sourceMappingURL=application.css.map */

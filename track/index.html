@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:title"
+      content="University of Lagos Engineering Society"
+    />
+    <meta property="og:description" content="When the gbedu dey enter body" />
+    <meta property="og:image" content="assets/images/logo.png" />
+    <meta property="og:url" content="http://undecided" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/logo.png"
+    />
+    <link rel="stylesheet" href="../assets/css/general.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/track.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+
+    <title>Enterprise</title>
+  </head>
+  <body class="theme">
+    <header class="nav-header">
+      <div class="nav-container">
+        <a href="/" class="logo">
+          <img src="../assets/svg/logo.svg" alt="logo" />
+        </a>
+
+        <nav class="nav">
+          <ul class="nav-links">
+            <li><a href="/programs">Programs</a></li>
+            <li><a href="/faqs">FAQs</a></li>
+            <li><a href="/track">Track Applications</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </nav>
+        <a href="/login" class="login-btn">Login</a>
+
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay">
+      <ul class="mobile-nav-links">
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/faqs">FAQs</a></li>
+        <li><a href="/track">Track Applications</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+      <a href="/login" class="mobile-login-btn">Login</a>
+    </div>
+
+    <section class="track-header">
+      <div class="text" data-aos="fade-up">
+        <h1>Track Applications</h1>
+        <p>Check the status of your application here</p>
+      </div>
+
+      <div class="form-container" data-aos="fade-up">
+        <form id="trackForm">
+          <div class="form-group">
+            <select class="form-control" id="program" name="program">
+              <option value="">Select the program you applied for</option>
+              <option value="Nigerian">Nigerian</option>
+              <option value="American">American</option>
+              <option value="British">British</option>
+              <option value="Canadian">Canadian</option>
+              <option value="South African">South African</option>
+              <option value="Ghanaian">Ghanaian</option>
+              <option value="Kenyan">Kenyan</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="error-message" id="program-error">Please select</div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="emailOrPhone"
+              name="emailOrPhone"
+              required
+              placeholder="Enter your email address or phone number"
+            />
+            <div class="error-message" id="emailOrPhone-error">
+              Please enter a valid email address
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary full" id="submitBtn">
+            Check Status
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section-faq" id="faq" data-aos="fade-up">
+      <div class="section-title-container">
+        <h2>Frequently Asked Questions</h2>
+        <p>Some of the frequently asked questions from participants like you</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <details>
+            <summary>
+              <p class="question-text">How do I apply?</p>
+              <img
+                class="arrow-icon"
+                src="../assets/svg/plus-circle.svg"
+                alt="arrow down"
+              />
+            </summary>
+            <div class="faq-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident consequuntur distinctio delectus, dolor placeat eius
+                veritatis quis, aliquid possimus nemo error minima quia.
+                Voluptatem deserunt molestiae facere labore exercitationem
+                voluptatum?
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>
+              <p class="question-text">What are the deadlines?</p>
+              <img
+                class="arrow-icon"
+                src="../assets/svg/plus-circle.svg"
+                alt="arrow down"
+              />
+            </summary>
+            <div class="faq-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident consequuntur distinctio delectus, dolor placeat eius
+                veritatis quis, aliquid possimus nemo error minima quia.
+                Voluptatem deserunt molestiae facere labore exercitationem
+                voluptatum?
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>
+              <p class="question-text">Can I get a refund?</p>
+              <img
+                class="arrow-icon"
+                src="../assets/svg/plus-circle.svg"
+                alt="arrow down"
+              />
+            </summary>
+            <div class="faq-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident consequuntur distinctio delectus, dolor placeat eius
+                veritatis quis, aliquid possimus nemo error minima quia.
+                Voluptatem deserunt molestiae facere labore exercitationem
+                voluptatum?
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>
+              <p class="question-text">How do I track my application?</p>
+              <img
+                class="arrow-icon"
+                src="../assets/svg/plus-circle.svg"
+                alt="arrow down"
+              />
+            </summary>
+            <div class="faq-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident consequuntur distinctio delectus, dolor placeat eius
+                veritatis quis, aliquid possimus nemo error minima quia.
+                Voluptatem deserunt molestiae facere labore exercitationem
+                voluptatum?
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>
+              <p class="question-text">What support is provided?</p>
+              <img
+                class="arrow-icon"
+                src="../assets/svg/plus-circle.svg"
+                alt="arrow down"
+              />
+            </summary>
+            <div class="faq-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident consequuntur distinctio delectus, dolor placeat eius
+                veritatis quis, aliquid possimus nemo error minima quia.
+                Voluptatem deserunt molestiae facere labore exercitationem
+                voluptatum?
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>
+              <p class="question-text">Are there fees?</p>
+              <img
+                class="arrow-icon"
+                src="../assets/svg/plus-circle.svg"
+                alt="arrow down"
+              />
+            </summary>
+            <div class="faq-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident consequuntur distinctio delectus, dolor placeat eius
+                veritatis quis, aliquid possimus nemo error minima quia.
+                Voluptatem deserunt molestiae facere labore exercitationem
+                voluptatum?
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="show-track-status" id="track-status" data-aos="fade-up">
+      <div class="track-container">
+        <h2>Application Details</h2>
+
+        <div class="track-program-details">
+          <div class="flex">
+            <p class="light">Program Name</p>
+            <p class="bold">SME Essentials Bootcamp</p>
+          </div>
+          <div class="flex">
+            <p class="light">Date Applied</p>
+            <p class="bold">Thursday, 21 June 2025 at 9:45 am</p>
+          </div>
+          <div class="flex">
+            <p class="light">Application Status</p>
+
+            <p class="status pending">Pending review</p>
+          </div>
+        </div>
+
+        <div class="track-status-description">
+          <p class="title">🎉 You’re In!</p>
+          <p class="description">
+            We’re still assessing your application. Expect an update within 3
+            business days
+          </p>
+        </div>
+
+        <p class="support">
+          Have any questions? <a href="/contact">Contact Support</a>
+        </p>
+
+        <a href="/programs" class="explore">Explore Programs</a>
+      </div>
+
+      <div class="missing-track-container">
+        <img src="../assets/svg/cancel.svg" alt="cancel" />
+        <h3>Can’t find your application</h3>
+        <p>
+          We’re sorry we can’t find any application with the credentials you’ve
+          provided. Please check again or reach out to Support.
+        </p>
+        <a href="/contact">Contact Support</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="left-footer">
+        <img src="../assets/svg/logo.svg" alt="logo" />
+        <p>
+          Discover tailored programs that turn ideas into thriving
+          businesses—fast.
+        </p>
+        <a href="/programs">Browse Programs</a>
+        <p class="copy">© <span id="currentYear"></span> — Copyright</p>
+      </div>
+
+      <div class="right-footer">
+        <div class="footer-flex">
+          <div class="footer-item">
+            <p class="title">QUICK LINKS</p>
+            <div class="links">
+              <a href="/track">Track Applications</a>
+              <a href="/#testimonials">Testimonials</a>
+              <a href="/#about">About Us</a>
+            </div>
+          </div>
+
+          <div class="footer-item">
+            <p class="title">CONTACT</p>
+            <div class="links">
+              <a href="mailto:support@edc4sme.ng">+234 800 123 EDC4</a>
+              <a href="https://wa.me/2348001234332">support@edc4sme.ng</a>
+              <a href="/faqs">FAQs</a>
+            </div>
+          </div>
+
+          <div class="footer-item">
+            <p class="title">Follow us</p>
+            <div class="social-links">
+              <a class="social-item">
+                <img src="../assets/svg/instagram.svg" alt="instagram" />
+              </a>
+
+              <a href="https://wa.me/2348001234332" class="social-item">
+                <img src="../assets/svg/whatsapp.svg" alt="whatsapp" />
+              </a>
+
+              <a class="social-item">
+                <img src="../assets/svg/telegram.svg" alt="telegram" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="copy">© <span id="currentYearFooter"></span> — Copyright</p>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../assets/js/aos.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/track.js"></script>
+  </body>
+</html>

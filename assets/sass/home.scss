@@ -1,0 +1,485 @@
+@use "./utils/index" as *;
+
+.home-hero {
+  @include sectionPadding;
+
+  & {
+    margin-top: 32px;
+  }
+
+  @include mq(768px) {
+    margin-top: 14px;
+  }
+
+  /* Swiper Hero Carousel */
+  .hero-carousel {
+    height: 743px;
+    position: relative;
+    @include mq(768px) {
+      height: 543px;
+    }
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 2rem;
+    text-align: center;
+
+    h1 {
+      margin: auto;
+      font-size: 4.5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 111%;
+      letter-spacing: -2.16px;
+      max-width: 672px;
+      @include mq(768px) {
+        font-size: calc(40 / 16 * 1rem);
+      }
+    }
+
+    p {
+      margin: 12px auto 32px;
+      font-size: calc(18 / 16 * 1rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      max-width: 360px;
+      @include mq(768px) {
+        font-size: calc(14 / 16 * 1rem);
+        margin: 8px auto 24px;
+      }
+    }
+  }
+
+  .cta-button {
+    @include button-secondary;
+    margin: auto;
+    max-width: 218px;
+  }
+
+  /* Custom Swiper Pagination - Top positioned dots */
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    top: 184px !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    border-radius: 50%;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 8px;
+    gap: 8px;
+    @include mq(768px) {
+      top: 100px !important;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 6px !important;
+    height: 6px !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white !important;
+    transform: scale(1.3) !important;
+    width: 8px !important;
+    height: 8px !important;
+  }
+
+  .swiper-pagination-bullet:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.1) !important;
+  }
+
+  /* Hide Swiper navigation arrows */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+.home-about {
+  @include sectionPadding;
+  .desc-content {
+    border-radius: 24px;
+    background: rgba(217, 217, 217, 0.22);
+    padding: 40px 10px;
+    h2 {
+      margin-bottom: 16px;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 44px; /* 110% */
+      letter-spacing: -0.4px;
+      color: var(--black02);
+      text-align: center;
+      @include mq(768px) {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    p {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      color: var(--grey02);
+      text-align: center;
+      max-width: 824px;
+      margin: auto;
+
+      span {
+        font-weight: 600;
+      }
+      @include mq(768px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+  .company-values {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    @include mq(980px) {
+      flex-direction: column-reverse;
+    }
+    img {
+      flex-shrink: 0;
+      width: 50%;
+      max-width: 670px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid #efefef;
+      @include mq(1350px) {
+        max-width: 500px;
+      }
+      @include mq(980px) {
+        width: 100%;
+        max-width: unset;
+      }
+    }
+    .value-list {
+      flex: 1;
+      .value-item {
+        border-radius: 24px;
+        padding: 32px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 16px;
+        @include mq(768px) {
+          padding: 16px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .text {
+          h5 {
+            ont-size: 24px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 32px; /* 133.333% */
+            letter-spacing: -0.24px;
+            color: var(--black02);
+            @include mq(768px) {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          p {
+            color: #3f3f3f;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px; /* 150% */
+            @include mq(768px) {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+        .icon-box {
+          border-radius: 25px;
+          background: var(--white);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 22px;
+          flex-shrink: 0;
+          img {
+            width: 80px;
+            height: 80px;
+            @include mq(768px) {
+              width: 48px;
+              height: 48px;
+            }
+          }
+        }
+        &.mission {
+          background: #f4f6ff;
+        }
+        &.vission {
+          background: #fff7ed;
+        }
+        &.objectives {
+          background: #f3fff5;
+        }
+      }
+    }
+  }
+}
+
+.home-programs {
+  @include sectionPadding;
+  & {
+    margin-top: 138px;
+  }
+  @include mq(768px) {
+    margin-top: 56px;
+  }
+
+  .program-grid {
+    margin-top: 30px;
+  }
+
+  .all-programs {
+    @include button-primary;
+    width: 264px;
+    margin: 24px auto 0;
+  }
+}
+
+.home-testimonial {
+  @include sectionPadding;
+  & {
+    margin-top: 80px;
+  }
+  .testimonial-carousel {
+    margin-top: 24px;
+    width: 100%;
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      width: 100%;
+
+      @include mq(1200px) {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .text-box {
+        padding: 170px 50px 146px;
+        background-color: var(--black01);
+
+        flex: 1;
+        @include mq(1350px) {
+          padding: 80px 20px 60px;
+          width: 100%;
+        }
+        @include mq(768px) {
+          padding: 32px 20px;
+          width: 100%;
+          min-height: 254px;
+        }
+        h3 {
+          margin-bottom: 72px;
+          text-align: center;
+          font-size: 36px;
+          font-style: normal;
+          font-weight: 400;
+          color: var(--white);
+
+          line-height: 48px; /* 133.333% */
+
+          @include mq(768px) {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 32px;
+          }
+        }
+        p {
+          color: rgba(255, 255, 255, 0.6);
+          text-align: center;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px; /* 175% */
+          @include mq(768px) {
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+      }
+      img {
+        width: 50%;
+        max-width: 652px;
+        object-fit: cover;
+        @include mq(1200px) {
+          width: 100%;
+          max-width: unset;
+          height: 500px;
+        }
+        @include mq(600px) {
+          height: 200px;
+        }
+      }
+    }
+
+    /* Custom Swiper Pagination - Top positioned dots */
+    .swiper-pagination {
+      display: flex;
+      align-items: center;
+      bottom: 146px !important;
+      top: unset !important;
+      left: 288px !important;
+      width: auto !important;
+      border-radius: 50%;
+      border-radius: 16px;
+      padding: 8px;
+      gap: 8px;
+
+      @include mq(1350px) {
+        left: 220px !important;
+      }
+
+      @include mq(1200px) {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: 20px !important;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      width: 8px !important;
+      height: 8px !important;
+      background: rgba(255, 255, 255, 0.6) !important;
+      opacity: 1 !important;
+      margin: 0 !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: white !important;
+    }
+
+    .swiper-pagination-bullet:hover {
+      background: rgba(255, 255, 255, 0.9) !important;
+      transform: scale(1.1) !important;
+    }
+
+    /* Hide Swiper navigation arrows */
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none !important;
+    }
+  }
+}
+
+.home-all-programs {
+  margin-top: 96px;
+  background: #f4f6ff;
+  padding: 48px 16px;
+  @include mq(768px) {
+    margin-top: 56px;
+    padding: 24px 16px;
+  }
+  h2 {
+    margin-bottom: 4px;
+    color: var(--black01);
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    @include mq(768px) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+  p {
+    color: var(--grey02);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 175% */
+    letter-spacing: 0.16px;
+    @include mq(768px) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+  a {
+    @include button-primary;
+
+    width: 230px;
+    margin: 24px auto 0;
+    @include mq(768px) {
+      margin-top: 16px;
+      width: 178px;
+    }
+  }
+}

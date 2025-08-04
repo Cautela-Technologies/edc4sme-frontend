@@ -1,0 +1,136 @@
+.theme {
+  --primary: #2e3a6e;
+  --white: #ffffff;
+  --black: #000000;
+  --black01: #06080e;
+  --grey01: #636363;
+  --grey02: #3f3f3f;
+  --error: #d90429;
+  --red0: #ff002c;
+  --red01: #c20808;
+  --red02: #ae001e;
+  --red03: #713e47;
+}
+
+.contact-header {
+  background: url("../images/program.png") no-repeat center/cover;
+  padding: 96px 0;
+}
+.contact-header .text {
+  padding: 14px 80px;
+  max-width: 1440px;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .contact-header .text {
+    padding: 10px 16px;
+  }
+}
+.contact-header .text h1 {
+  color: var(--white);
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 120% */
+  letter-spacing: -0.8px;
+}
+.contact-header .text p {
+  max-width: 360px;
+  margin: auto;
+  color: #d9d9d9;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.contact-info-container {
+  padding: 14px 80px;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  .contact-info-container {
+    padding: 10px 16px;
+  }
+}
+.contact-info-container .info-item {
+  padding: 16px;
+  border-radius: 16px;
+  background: #f4f6ff;
+  flex: 1;
+}
+@media screen and (max-width: 768px) {
+  .contact-info-container .info-item {
+    width: 100%;
+    flex: unset;
+  }
+}
+.contact-info-container .info-item .top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.contact-info-container .info-item .top p {
+  color: var(--black01);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+}
+.contact-info-container .info-item .top .icon-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-info-container .info-item .top .icon-box img {
+  width: 16px;
+}
+.contact-info-container .info-item .text {
+  margin-top: 8px;
+}
+.contact-info-container .info-item .text p {
+  color: var(--black01);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.16px;
+  margin-bottom: 4px;
+}
+.contact-info-container .info-item .text p:last-child {
+  margin-bottom: 0;
+}
+
+.map-container {
+  padding: 14px 80px;
+  max-width: 1440px;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .map-container {
+    padding: 10px 16px;
+  }
+}
+.map-container .mapouter {
+  width: 100% !important;
+  height: 602px !important;
+  border-radius: 16px !important;
+}
+.map-container iframe {
+  width: 100% !important;
+  height: 602px !important;
+  border-radius: 16px !important;
+}/*# sourceMappingURL=contact.css.map */

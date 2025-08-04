@@ -1,0 +1,108 @@
+@use "./utils/index" as *;
+
+.contact-header {
+  background: url("../images/program.png") no-repeat center / cover;
+  padding: 96px 0;
+
+  .text {
+    @include sectionPadding;
+    h1 {
+      color: var(--white);
+      text-align: center;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 48px; /* 120% */
+      letter-spacing: -0.8px;
+    }
+
+    p {
+      max-width: 360px;
+      margin: auto;
+      color: #d9d9d9;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+.contact-info-container {
+  @include sectionPadding;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .info-item {
+    padding: 16px;
+    border-radius: 16px;
+    background: #f4f6ff;
+    flex: 1;
+
+    @include mq(768px) {
+      width: 100%;
+      flex: unset;
+    }
+
+    .top {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      p {
+        color: var(--black01);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 150% */
+      }
+      .icon-box {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 16px;
+        }
+      }
+    }
+
+    .text {
+      margin-top: 8px;
+      p {
+        color: var(--black01);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        letter-spacing: 0.16px;
+        margin-bottom: 4px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.map-container {
+  @include sectionPadding;
+  .mapouter {
+    width: 100% !important;
+    height: 602px !important;
+    border-radius: 16px !important;
+  }
+  iframe {
+    width: 100% !important;
+    height: 602px !important;
+    border-radius: 16px !important;
+  }
+}

@@ -291,6 +291,9 @@
     font-weight: 500;
     line-height: normal;
     letter-spacing: -0.48px;
+    &.left {
+      text-align: left;
+    }
     @include mq(768px) {
       font-size: 24px;
     }
@@ -302,6 +305,69 @@
 
   .step-content.active {
     display: block;
+  }
+
+  .step-answers {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 24px;
+
+    .title-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      h3 {
+        color: #06080e;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.36px;
+        @include mq(768px) {
+          font-size: 14px;
+        }
+      }
+      button {
+        @include btn;
+        border-radius: 8px;
+        background: #f4f6ff;
+        color: #2e3a6e;
+        min-width: 60px;
+        height: 30px;
+        display: flex;
+        gap: 4px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.28px;
+      }
+    }
+
+    .content-flex {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .content-item {
+        flex: 1;
+        p {
+          color: #636363;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          &.bold {
+            color: var(--black01);
+          }
+        }
+      }
+    }
   }
 
   .tagline-input {

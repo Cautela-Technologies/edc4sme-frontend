@@ -228,6 +228,9 @@ const uploadPrompt = document.getElementById("uploadPrompt");
 const uploadedFileContainer = document.getElementById("uploadedFileContainer");
 const uploadedFileName = document.getElementById("uploadedFileName");
 const removeFileBtn = document.getElementById("removeFileBtn");
+const jumpToStep1Btn = document.getElementById("jumpToStep1");
+const jumpToStep2Btn = document.getElementById("jumpToStep2");
+const jumpToStep3Btn = document.getElementById("jumpToStep3");
 
 // File upload event listeners
 if (fileUploadArea) {
@@ -336,6 +339,23 @@ function clearFileError() {
   }
 }
 
+// jump to step
+
+jumpToStep1Btn.addEventListener("click", () => {
+  currentStep = 1;
+  updateStepper();
+});
+
+jumpToStep2Btn.addEventListener("click", () => {
+  currentStep = 2;
+  updateStepper();
+});
+
+jumpToStep3Btn.addEventListener("click", () => {
+  currentStep = 3;
+  updateStepper();
+});
+
 // Step navigation
 document.getElementById("step1Next").addEventListener("click", () => {
   if (validateStep(1)) {
@@ -355,6 +375,27 @@ document.getElementById("step2Next").addEventListener("click", () => {
     saveStepData(2);
     currentStep = 3;
     updateStepper();
+  }
+});
+
+document.getElementById("step3Next").addEventListener("click", () => {
+  saveStepData(3);
+  currentStep = 4;
+  updateStepper();
+
+  Object.keys(formData).forEach((key) => {
+    const fieldElement = document.getElementById(`${key}-answer`);
+    if (fieldElement) {
+      fieldElement.textContent = formData[key] || "N/A";
+    }
+  });
+
+  const fileUploadAreaElement = document.getElementById(
+    "fileUploadArea-answer"
+  );
+
+  if (uploadedFile && fileUploadAreaElement) {
+    fileUploadAreaElement.textContent = uploadedFile.name;
   }
 });
 

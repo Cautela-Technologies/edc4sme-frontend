@@ -367,6 +367,8 @@
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.08);
   height: -moz-max-content;
   height: max-content;
+  position: sticky;
+  top: 100px;
 }
 .program-details-body .eligibility .eligibility-list {
   margin-top: 10px;

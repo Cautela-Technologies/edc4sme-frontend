@@ -20,8 +20,8 @@
 }
 
 body {
+  overflow-y: auto;
   scroll-behavior: smooth;
-  -ms-overflow-style: scrollbar;
 }
 
 .section-title-container h2 {
